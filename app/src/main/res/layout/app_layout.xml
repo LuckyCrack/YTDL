@@ -1,0 +1,283 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_bg"
+        android:background="@drawable/color_draw"
+        android:elevation="10dp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="@color/dark"
+        android:outlineSpotShadowColor="@color/dark">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="15dp"
+            android:singleLine="true"
+            android:text="Welcome!"
+            android:textColor="@color/dark"
+            android:textColorLink="@color/dark"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_url"
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Enter Video URL"
+                android:inputType="textUri"
+                android:padding="27dp"
+                android:textColor="@color/dark"
+                app:helperTextTextColor="@color/dark"
+                app:counterTextColor="@color/dark"
+                app:helperTextTextAppearance="@style/LoginTextInputLayoutStyle"
+                android:textColorHint="@color/design_default_color_primary"
+                app:shapeAppearance="@style/Rounded"
+                app:startIconDrawable="@drawable/round_search_24"
+                app:startIconTint="@color/dark">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:textColor="@color/dark"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal|center_vertical"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColorLink="@color/dark" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:paddingBottom="20dp">
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/round_content_paste_24"
+                android:drawableTint="@color/light"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="paste_data"
+                android:paddingLeft="26dp"
+                android:paddingTop="15dp"
+                android:paddingRight="26dp"
+                android:paddingBottom="15dp"
+                android:shadowColor="#00FFFFFF"
+                android:text="PASTE"
+                android:textColor="@color/light"
+                android:textColorLink="#FFFFFF"
+                app:cornerRadius="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_update_folder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_update_folder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/round_folder_open_24"
+                android:drawableTint="@color/light"
+                android:fontFamily="@font/poppins_medium"
+                android:onClick="setup_folder"
+                android:paddingLeft="22dp"
+                android:paddingTop="15dp"
+                android:paddingRight="22dp"
+                android:paddingBottom="15dp"
+                android:text="FOLDER"
+                android:textColor="@color/light"
+                app:cornerRadius="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="57dp"
+        android:paddingRight="57dp"
+        android:paddingBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_start_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/round_file_download_24"
+            android:drawableTint="@color/light"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="startDownload"
+            android:paddingLeft="22dp"
+            android:paddingTop="15dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="15dp"
+            android:text="DOWNLOAD"
+            android:textColor="@color/light"
+            app:cornerRadius="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/info_save"
+            android:layout_width="241dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingTop="12dp"
+            android:text="File Saves To : "
+            android:textColor="@color/design_default_color_primary" />
+
+        <TextView
+            android:id="@+id/saveto"
+            android:layout_width="241dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Internal Storage/Android/data/com.vapps.ytdl/files/Download/"
+            android:textColor="@color/design_default_color_primary" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/dl_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/alert_window"
+            android:elevation="24dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:outlineAmbientShadowColor="@color/design_default_color_primary"
+            android:outlineSpotShadowColor="@color/design_default_color_primary"
+            android:padding="22dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+
+            <TextView
+                android:id="@+id/body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:padding="5dp"
+                android:textColor="@color/dark"
+                android:text="DOWNLOADING"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="248dp"
+                android:layout_height="22dp"
+                android:padding="5dp"
+                android:progressDrawable="@drawable/custom_progress"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="0%"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tv_status2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="right"
+                    android:text="Loading"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/dark"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
